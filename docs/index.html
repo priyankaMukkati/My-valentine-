@@ -7,10 +7,9 @@
 <style>
   body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(135deg, #ffd6e8, #fff1f7);
     font-family: Arial, sans-serif;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,14 +17,12 @@
 
   .card {
     background: white;
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     text-align: center;
-    max-width: 360px;
     width: 90%;
-    position: relative;
-    z-index: 2;
+    max-width: 350px;
   }
 
   h1 {
@@ -35,57 +32,92 @@
 
   h2 {
     color: #ff4d88;
-    font-size: 20px;
+    font-size: 18px;
   }
 
   p {
-    color: #666;
+    color: #555;
     font-size: 14px;
   }
 
   img {
     width: 100%;
-    border-radius: 15px;
-    margin: 15px 0;
-  }
-
-  .buttons {
-    margin-top: 20px;
-    position: relative;
-    height: 90px;
+    border-radius: 12px;
+    margin: 12px 0;
   }
 
   button {
-    padding: 12px 28px;
-    font-size: 16px;
+    padding: 12px 22px;
+    border-radius: 22px;
     border: none;
-    border-radius: 25px;
+    font-size: 15px;
     cursor: pointer;
+    margin: 8px;
   }
 
-  #yes {
+  .yes {
     background: #ff4d88;
     color: white;
   }
 
-  #no {
+  .no {
     background: #ddd;
-    color: #555;
-    position: absolute;
-    left: 160px;
-    top: 0;
   }
 
-  .music-btn {
-    background: #ff4d88;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 14px;
-    margin-top: 10px;
+  .hearts {
+    position: fixed;
+    bottom: 0;
+    font-size: 20px;
+    animation: float 5s linear infinite;
   }
 
-  .result {  </script>
+  @keyframes float {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+  }
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+  <source src="https://cdn.pixabay.com/audio/2023/03/06/audio_7c0b8c4f78.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+  <h1>❤️ Happy Valentine’s Day ❤️</h1>
+  <h2>My Love</h2>
+
+  <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="Couple">
+
+  <p>Tap to start the music 🎶</p>
+  <button class="yes" onclick="playMusic()">▶ Start Music</button>
+
+  <h2>Will you be my Valentine? 💕</h2>
+
+  <button class="yes" onclick="alert('Yay! I love you ❤️')">YES</button>
+  <button class="no" onclick="moveNo(this)">NO</button>
+</div>
+
+<script>
+  function playMusic() {
+    document.getElementById("music").play();
+  }
+
+  function moveNo(btn) {
+    btn.style.position = "relative";
+    btn.style.left = (Math.random() * 100 - 50) + "px";
+  }
+
+  setInterval(() => {
+    const h = document.createElement("div");
+    h.innerHTML = "❤️";
+    h.className = "hearts";
+    h.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 5000);
+  }, 500);
+</script>
 
 </body>
 </html>
