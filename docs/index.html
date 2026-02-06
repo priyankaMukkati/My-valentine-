@@ -1,115 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Will You Be My Valentine?</title>
+<meta charset="UTF-8">
+<title>Happy Valentine’s Day ❤️</title>
 
-  <style>
-    body {
-      background: linear-gradient(135deg, #ffd6e8, #fff1f7);
-      font-family: 'Arial', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffd6e8, #fff1f7);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      text-align: center;
-      max-width: 360px;
-      width: 90%;
-    }
+  .card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    text-align: center;
+    max-width: 360px;
+    width: 90%;
+    position: relative;
+    z-index: 2;
+  }
 
-    h1, h2 {
-      color: #ff4d88;
-    }
+  h1 {
+    color: #ff4d88;
+    margin-bottom: 10px;
+  }
 
-    p {
-      color: #777;
-      font-size: 14px;
-    }
+  h2 {
+    color: #ff4d88;
+    font-size: 20px;
+  }
 
-    .buttons {
-      margin-top: 20px;
-      position: relative;
-      height: 60px;
-    }
+  p {
+    color: #666;
+    font-size: 14px;
+  }
 
-    button {
-      padding: 12px 25px;
-      font-size: 16px;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
+  img {
+    width: 100%;
+    border-radius: 15px;
+    margin: 15px 0;
+  }
 
-    #yes {
-      background: #ff4d88;
-      color: white;
-    }
+  .buttons {
+    margin-top: 20px;
+    position: relative;
+    height: 90px;
+  }
 
-    #no {
-      background: #ddd;
-      color: #555;
-      position: absolute;
-      left: 140px;
-    }
+  button {
+    padding: 12px 28px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
 
-    .result {
-      display: none;
-    }
+  #yes {
+    background: #ff4d88;
+    color: white;
+  }
 
-    .result img {
-      width: 180px;
-      margin-top: 15px;
-    }
-  </style>
-</head>
-<body>
+  #no {
+    background: #ddd;
+    color: #555;
+    position: absolute;
+    left: 160px;
+    top: 0;
+  }
 
-  <!-- Romantic background music -->
-  <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/audio/2022/02/23/audio_7d89c8c4e4.mp3" type="audio/mpeg">
-  </audio>
+  .music-btn {
+    background: #ff4d88;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-top: 10px;
+  }
 
-  <div class="card" id="question">
-    <h1>❤️ My Husband,</h1>
-    <h2>Will you be my Valentine? 💕</h2>
-    <p>(Choose wisely… the “No” button is shy 😜)</p>
-
-    <div class="buttons">
-      <button id="yes" onclick="sayYes()">YES</button>
-      <button id="no" onmouseover="moveNo()">NO</button>
-    </div>
-  </div>
-
-  <div class="card result" id="result">
-    <h1>💖 YAY!!! 💖</h1>
-    <p>Best decision ever 😘</p>
-    <img src="https://i.imgur.com/6XK7GQp.png" alt="cute hug">
-    <p>I love you forever ❤️</p>
-  </div>
-
-  <script>
-    function moveNo() {
-      const noBtn = document.getElementById("no");
-      const x = Math.random() * 220;
-      const y = Math.random() * 40;
-      noBtn.style.left = x + "px";
-      noBtn.style.top = y + "px";
-    }
-
-    function sayYes() {
-      document.getElementById("question").style.display = "none";
-      document.getElementById("result").style.display = "block";
-    }
-  </script>
+  .result {  </script>
 
 </body>
 </html>
