@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Valentine?</title>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffd6e8, #fff1f7);
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 360px;
+      width: 90%;
+    }
+
+    h1, h2 {
+      color: #ff4d88;
+    }
+
+    p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      position: relative;
+      height: 60px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    #yes {
+      background: #ff4d88;
+      color: white;
+    }
+
+    #no {
+      background: #ddd;
+      color: #555;
+      position: absolute;
+      left: 140px;
+    }
+
+    .result {
+      display: none;
+    }
+
+    .result img {
+      width: 180px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Romantic background music -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/02/23/audio_7d89c8c4e4.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="card" id="question">
+    <h1>❤️ My Husband,</h1>
+    <h2>Will you be my Valentine? 💕</h2>
+    <p>(Choose wisely… the “No” button is shy 😜)</p>
+
+    <div class="buttons">
+      <button id="yes" onclick="sayYes()">YES</button>
+      <button id="no" onmouseover="moveNo()">NO</button>
+    </div>
+  </div>
+
+  <div class="card result" id="result">
+    <h1>💖 YAY!!! 💖</h1>
+    <p>Best decision ever 😘</p>
+    <img src="https://i.imgur.com/6XK7GQp.png" alt="cute hug">
+    <p>I love you forever ❤️</p>
+  </div>
+
+  <script>
+    function moveNo() {
+      const noBtn = document.getElementById("no");
+      const x = Math.random() * 220;
+      const y = Math.random() * 40;
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+
+    function sayYes() {
+      document.getElementById("question").style.display = "none";
+      document.getElementById("result").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
